@@ -12,6 +12,10 @@ build:
 test:
 	go test -v ./pkg/... ./cmd/...
 
+.PHONY: integration-test
+integration-test: build
+	go test -tags integration -v -timeout 21m ./tests/integration/... -args -skip-creation true
+
 .PHONY: test-with-coverage
 test-with-coverage:
 	go test -v -covermode=count -coverprofile=coverage.out ./pkg/... ./cmd/...
