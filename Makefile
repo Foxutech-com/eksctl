@@ -14,7 +14,7 @@ test:
 
 .PHONY: integration-test
 integration-test: build
-	go test -tags integration -v -timeout 21m ./tests/integration/... -args -skip-creation true
+	go test -tags integration -v -timeout 21m ./tests/integration/... -args -skip-creation false
 
 .PHONY: test-with-coverage
 test-with-coverage:
